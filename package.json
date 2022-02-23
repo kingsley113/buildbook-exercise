@@ -1,0 +1,22 @@
+{
+  "name": "spotify-modify",
+  "version": "1.0.0",
+  "description": "CLI app to read a spotify JSON file and output a new updated JSON file",
+  "main": "bin/index.js",
+  "bin": {
+    "spotify-modify": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingsley113/buildbook-exercise.git"
+  },
+  "author": "Cameron Kingsley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingsley113/buildbook-exercise/issues"
+  },
+  "homepage": "https://github.com/kingsley113/buildbook-exercise#readme"
+}
