@@ -6,7 +6,7 @@ Take home exercise for BuildBook interview
 
 Installation:
 
-- $ npm install
+- $ npm install -g
 
 Run the program with the following command:
 
