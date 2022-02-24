@@ -6,7 +6,6 @@ const [origFile, changeFile, outputFile] = process.argv.slice(2);
 // Parse original and changes JSON data
 let data = require(`../data/${origFile}`);
 const changes = require(`../data/${changeFile}`);
-// Random assortment of changes created in changes.json file, per project requirements
 
 // Iterate through all changes
 for (const key in changes) {
