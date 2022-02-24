@@ -1,4 +1,4 @@
-# Buildbook-Spotify-exercise
+# Buildbook Spotify Exercise
 
 Take home exercise for BuildBook interview
 
