@@ -1,15 +1,12 @@
 #! /usr/bin/env node
-const fs = require("fs");
 
 // Get command line arguments into constants
 const [origFile, changeFile, outputFile] = process.argv.slice(2);
-// Parse original JSON data
-let data = require(`../data/${origFile}`);
-// console.log("Original: ", data);
 
-// Parse changes JSON data
-// Random assortment of changes created in changes.json file, per project requirements
+// Parse original and changes JSON data
+let data = require(`../data/${origFile}`);
 const changes = require(`../data/${changeFile}`);
+// Random assortment of changes created in changes.json file, per project requirements
 
 // Iterate through all changes
 for (const key in changes) {
@@ -68,6 +65,8 @@ function removePlaylist(playlistId) {
 }
 
 // output modified data into new file
+const fs = require("fs");
+
 fs.writeFile(`./output/${outputFile}`, JSON.stringify(data, null, 2), (err) => {
   if (err) {
     throw err;
