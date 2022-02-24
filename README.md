@@ -1,8 +1,9 @@
-# buildbook-exercise
+# Buildbook-Spotify-exercise
 
 Take home exercise for BuildBook interview
 
-##nstallation & Use
+## Installation & Use
+
 Installation:
 run $ npm install
 
@@ -30,6 +31,8 @@ With scaling in mind, this was one of the reason for the Redux style approach. A
 
 If the spotify.json file grows, the program could read only the data it needs to modify (i.e. users, playlist, songs) rather than copy the entire file into a data object. Then load data as required based on the changes file requirements. Or, the most idea way is to use a Database with ActiveRecord, import the data once, and then eliminate the need for the spotify.json file altogether while carrying out future requests with the DB.
 
-## Time Spend on Project
+## Time Spent on Project
 
-Overall I spend a little more than two hours on the project. I needed to brush up on reading/writing files, but otherwise went fairly smoothly. I roughed out a functional version first and then spent time refactoring to simplify and clean up the code, while considering the scaling question.
+Overall I spent a little more than two hours on the project. I needed to brush up on reading/writing files, but otherwise went smoothly. I first took some time to lay out a gameplan and decide which approach to use, how to format the changes.json file, and how to maintain readability & scaling. I then roughed out a functional version and followed with refactoring to simplify and clean up the code.
+
+Thank you for the opportunity to complete this project, I really enjoyed this problem and hope it provides useful insight into the quality of work you can expect. I agree that this is a much better representation than traditional whiteboard interviews. I am happy to answer any questions!
