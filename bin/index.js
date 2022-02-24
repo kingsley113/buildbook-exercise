@@ -31,7 +31,7 @@ for (const key in changes) {
 function addSongToPlaylist(playlistId, songId) {
   // Find playlist, add song id to songs array
   for (const playlist of data.playlists) {
-    if (playlist.id == playlistId) {
+    if (playlist.id === playlistId) {
       playlist.song_ids.push(songId);
       break;
     }
@@ -40,10 +40,9 @@ function addSongToPlaylist(playlistId, songId) {
 
 function createNewPlaylist(userId, songIds) {
   // iterate through ids to find max in case ids are not in order
-  let ids = [];
-  for (const playlist of data.playlists) {
-    ids.push(parseInt(playlist.id));
-  }
+  const ids = data.playlists.map((playlist) => {
+    return parseInt(playlist.id);
+  });
   const newId = Math.max(...ids) + 1;
 
   // Create new playlist object
@@ -64,12 +63,12 @@ function removePlaylist(playlistId) {
   });
 }
 
-// output modified data into new file
+// output modified data to new file
 const fs = require("fs");
 
 fs.writeFile(`./output/${outputFile}`, JSON.stringify(data, null, 2), (err) => {
   if (err) {
     throw err;
   }
-  console.log("Spotify JSON data is saved");
+  console.log(`JSON output file is saved at "./output/${outputFile}"`);
 });
