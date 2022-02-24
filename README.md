@@ -5,14 +5,16 @@ Take home exercise for BuildBook interview
 ## Installation & Use
 
 Installation:
-run $ npm install
+
+- $ npm install
 
 Run the program with the following command:
-$ spotify-modify spotify.json changes.json output-file-name.json
 
-spotify.json - name must match the source Spotify JSON data file saved in the data folder
-changes.json - name must match the data changes JSON file saved in the data folder
-output-file-name.json - this is the output file to be saved in the output folder. Name can be anything you like (must include '.json' extension in name)
+- $ spotify-modify spotify.json changes.json output-file-name.json
+
+- spotify.json - name must match the source Spotify JSON data file saved in the data folder
+- changes.json - name must match the data changes JSON file saved in the data folder
+- output-file-name.json - this is the output file to be saved in the output folder. Name can be anything you like (must include '.json' extension in name)
 
 ## Design Approach
 
