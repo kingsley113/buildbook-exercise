@@ -31,7 +31,7 @@ I organized the file structure for easy readability, with the data folder contai
 
 With scaling in mind, this was one of the reason for the Redux style approach. Assuming that a larger changes.json file would include a known number of action types, these can be added to the switch statement on line 15, maintaining readability, and then add the respective function to perform the modification elsewhere. On a larger scale these could be implemented as API endpoints with a full Redux action/reducer integration rather than the JSON/switch statement here.
 
-If the spotify.json file grows, the program could read only the data it needs to modify (i.e. users, playlist, songs) rather than copy the entire file into a data object. Then load data as required based on the changes file requirements. Or, the most idea way is to use a Database with ActiveRecord, import the data once, and then eliminate the need for the spotify.json file altogether while carrying out future requests with the DB.
+If the spotify.json file grows, the program could read only the data it needs to modify (i.e. users, playlist, songs) rather than copy the entire file into a data object. Then load data as required based on the change file requirements. Or, a more ideal way is to use a Database with ActiveRecord, import the data once, and then eliminate the need for the spotify.json file altogether while carrying out future requests with the DB.
 
 ## Time Spent on Project
 
