@@ -14,13 +14,13 @@ for (const key in changes) {
 
   switch (key) {
     case "add_song_to_playlist":
-      addSongToPlaylist(action["playlist_id"], action["song_id"]);
+      addSongToPlaylist(action.playlist_id, action.song_id);
       break;
     case "create_new_playlist":
-      createNewPlaylist(action["user_id"], action["song_ids"]);
+      createNewPlaylist(action.user_id, action.song_ids);
       break;
     case "remove_existing_playlist":
-      removePlaylist(action["playlist_id"]);
+      removePlaylist(action.playlist_id);
       break;
     default:
       break;
@@ -30,9 +30,9 @@ for (const key in changes) {
 // Modify data as required
 function addSongToPlaylist(playlistId, songId) {
   // Find playlist, add song id to songs array
-  for (const playlist of data["playlists"]) {
-    if (playlist["id"] == playlistId) {
-      playlist["song_ids"].push(songId);
+  for (const playlist of data.playlists) {
+    if (playlist.id == playlistId) {
+      playlist.song_ids.push(songId);
       break;
     }
   }
@@ -41,8 +41,8 @@ function addSongToPlaylist(playlistId, songId) {
 function createNewPlaylist(userId, songIds) {
   // iterate through ids to find max in case ids are not in order
   let ids = [];
-  for (const playlist of data["playlists"]) {
-    ids.push(parseInt(playlist["id"]));
+  for (const playlist of data.playlists) {
+    ids.push(parseInt(playlist.id));
   }
   const newId = Math.max(...ids) + 1;
 
@@ -54,7 +54,7 @@ function createNewPlaylist(userId, songIds) {
   };
 
   // Add new playlist to data object
-  data["playlists"].push(newPlaylist);
+  data.playlists.push(newPlaylist);
 }
 
 function removePlaylist(playlistId) {
