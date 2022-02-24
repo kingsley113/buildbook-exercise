@@ -14,13 +14,14 @@ const changes = require(`../data/${changeFile}`);
 
 for (const key in changes) {
   // console.log(changes[key]);
+  const action = changes[key];
   switch (key) {
     case "add_song_to_playlist":
-      addSongToPlaylist(changes[key]);
+      addSongToPlaylist(action["playlist_id"], action["song_id"]);
     case "create_new_playlist":
-      createNewPlaylist(changes[key]);
+      createNewPlaylist(action["user_id"], action["song_ids"]);
     case "remove_existing_paylist":
-      removePlaylist(changes[key]);
+      removePlaylist(action["playlist_id"]);
     default:
   }
 }
@@ -32,3 +33,8 @@ for (const key in changes) {
 // Define functions for modifying data
 
 // Add song to existing playlist
+const addSongToPlaylist = (playlistId, songId) => {};
+
+const createNewPlaylist = (userId, songIds) => {};
+
+const removePlaylist = (id) => {};
