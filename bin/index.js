@@ -1,10 +1,11 @@
 #! /usr/bin/env node
+const fs = require("fs");
 
 // Get command line arguments into constants
 const [origFile, changeFile, outputFile] = process.argv.slice(2);
 // Parse original JSON data
 let data = require(`../data/${origFile}`);
-console.log("Original: ", data);
+// console.log("Original: ", data);
 
 // Parse changes JSON data
 // Random assortment of changes created in changes.json file, per project requirements
@@ -31,6 +32,7 @@ for (const key in changes) {
 
 // Modify data as required
 function addSongToPlaylist(playlistId, songId) {
+  // Find playlist, add song id to songs array
   for (const playlist of data["playlists"]) {
     if (playlist["id"] == playlistId) {
       playlist["song_ids"].push(songId);
@@ -59,10 +61,16 @@ function createNewPlaylist(userId, songIds) {
 }
 
 function removePlaylist(playlistId) {
+  // Filter out playlist with matching id
   data.playlists = data.playlists.filter((playlist) => {
     return playlist.id !== playlistId;
   });
 }
 
 // output modified data into new file
-console.log("Modified: ", data);
+fs.writeFile(`./output/${outputFile}`, JSON.stringify(data, null, 2), (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log("Spotify JSON data is saved");
+});
